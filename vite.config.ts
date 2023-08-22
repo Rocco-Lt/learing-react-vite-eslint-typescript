@@ -8,9 +8,9 @@ export default defineConfig({
     react(),
     viteEslint({
       //  failOnError: false
-      include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.jsx', 'src/**/*.ts'],
-      //  exclue: ['./node_modules/**'],
-      cache: false
+      include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.jsx', 'src/**/*.ts']
+      // exclue: ['./node_modules/**']
+      // cache: false
     })
   ],
   resolve: {
