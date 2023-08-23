@@ -93,5 +93,6 @@ module.exports = {
             'resize',
             'transition',
         ],
+        "selector-class-pattern": null, // 强制选择器类名的格式
     },
 };
