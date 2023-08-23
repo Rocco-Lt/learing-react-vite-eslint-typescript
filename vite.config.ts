@@ -28,5 +28,17 @@ export default defineConfig({
     postcss: {
       plugins: [postcssPresetEnv()]
     }
+  },
+  server: {
+    cors: true,
+    // https: false,
+    // 代理跨域（mock 不需要配置，这里只是个事列）
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:9393 ', // easymock
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 });

@@ -1,3 +1,4 @@
+import { loginApi } from '@/api/login';
 import './index.less';
 import { Button, Form, Input } from 'antd';
 
@@ -10,6 +11,9 @@ type FieldType = {
 const Login: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Success:', values);
+    loginApi(values).then((res) => {
+      console.log(res);
+    });
   };
 
   const onFinishFailed = (errorInfo: any) => {
