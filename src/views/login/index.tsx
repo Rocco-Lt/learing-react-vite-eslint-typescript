@@ -1,7 +1,6 @@
-import { loginApi } from '@/api/login';
 import './index.less';
 import { Button, Form, Input } from 'antd';
-
+import { loginApi } from '@/api/modules/login';
 type FieldType = {
   username?: string;
   password?: string;
@@ -9,11 +8,13 @@ type FieldType = {
 };
 
 const Login: React.FC = () => {
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     console.log('Success:', values);
-    loginApi(values).then((res) => {
+    // 获取token
+    await loginApi(values).then((res) => {
       console.log(res);
     });
+    console.log(4444);
   };
 
   const onFinishFailed = (errorInfo: any) => {
