@@ -5,7 +5,10 @@ import Layout from '@/layout';
 const rootRouter: any = [
   { path: '/', element: <Navigate to={'/login'} /> },
   { path: '/login', element: <Login /> },
-  { path: '/home', element: <Layout />, children: [{ path: 'index', element: <HomePage /> }] }
+  {
+    element: <Layout />,
+    children: [{ path: '/home', element: <HomePage /> }]
+  }
 ];
 
 const Router = () => {

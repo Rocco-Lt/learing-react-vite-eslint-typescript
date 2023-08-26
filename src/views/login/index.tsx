@@ -4,6 +4,7 @@ import { loginApi } from '@/api/modules/login';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+// const loginImg = require('@/assets/images/login_bg.svg');
 
 type FieldType = {
   username?: string;
@@ -29,6 +30,12 @@ const Login: React.FC = () => {
       <div className="loginBox">
         {/* <div className="login-left">左边</div> */}
         <div className="login-right">
+          <p>
+            <svg className="icon icon-title" aria-hidden="true">
+              <use xlinkHref="#icon-react"></use>
+            </svg>
+          </p>
+          <p className="title">Rocco Blogs Admin</p>
           <div className="login-form">
             <Form
               name="basic"
