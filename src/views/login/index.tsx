@@ -28,7 +28,6 @@ const Login: React.FC = () => {
   return (
     <div className="login-content">
       <div className="loginBox">
-        {/* <div className="login-left">左边</div> */}
         <div className="login-right">
           <p>
             <svg className="icon icon-title" aria-hidden="true">
@@ -54,7 +53,6 @@ const Login: React.FC = () => {
               <Form.Item<FieldType> name="password" rules={[{ required: true, message: '请输入密码' }]}>
                 <Input.Password prefix={<LockOutlined />} />
               </Form.Item>
-
               <Form.Item>
                 <div className="login-btn">
                   <Button type="default">重制</Button>

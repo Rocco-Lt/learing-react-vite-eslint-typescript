@@ -1,8 +1,11 @@
 import Router from '@/routers/index';
+import AuthRouter from '@/routers/utils/authRouter';
 function App() {
   return (
     <>
-      <Router></Router>
+      <AuthRouter>
+        <Router></Router>
+      </AuthRouter>
     </>
   );
 }

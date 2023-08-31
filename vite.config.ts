@@ -36,7 +36,7 @@ export default defineConfig({
     // 代理跨域（mock 不需要配置，这里只是个事列）
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:7002 ', // easymock
+        target: 'http://127.0.0.1:7001 ', // easymock
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
