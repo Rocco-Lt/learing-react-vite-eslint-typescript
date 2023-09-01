@@ -1,13 +1,14 @@
-import Login from '@/views/login';
+import { lazy } from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
 import HomePage from '@/views/home/index';
 import Layout from '@/layout';
 import NotAuth from '@/components/ErrorMessage/403';
+import LazyLoad from './utils/lazyLoad';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const rootRouter: any = [
   { path: '/', element: <Navigate to={'/login'} /> },
-  { path: '/login', element: <Login /> },
+  { path: '/login', element: LazyLoad(lazy(() => import('@/views/login'))) },
   {
     element: <Layout />,
     children: [

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import viteEslint from 'vite-plugin-eslint';
 import { resolve } from 'path';
 import postcssPresetEnv from 'postcss-preset-env';
-
+import postCssPxToRem from 'postcss-pxtorem';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -17,7 +17,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@': resolve(__dirname, './src'),
+      views: resolve(__dirname, './src/views')
     }
   },
   css: {
@@ -27,7 +28,13 @@ export default defineConfig({
       }
     },
     postcss: {
-      plugins: [postcssPresetEnv()]
+      plugins: [
+        postcssPresetEnv(),
+        postCssPxToRem({
+          rootValue: 192,
+          propList: ['*']
+        })
+      ]
     }
   },
   server: {

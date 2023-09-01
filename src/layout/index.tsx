@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './index.less';
 const { Header, Sider, Content } = Layout;
 const LayoutCompoment = () => {
